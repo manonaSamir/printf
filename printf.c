@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 		else
 			i += _putchar(*spec);
 	}
-
+	_putchar(-1);
 	va_end(prints);
 	return (i);
 }
