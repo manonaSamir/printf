@@ -65,7 +65,7 @@ int print_Big_hex(va_list list)
 }
 
 /**
- * print_binary - prints octal
+ * print_binary - prints binary
  * @list: va_list of arguments from _printf
  * Return: number of char printed
  */
@@ -73,16 +73,26 @@ int print_Big_hex(va_list list)
 int print_binary(va_list list)
 {
 	int number = va_arg(list, unsigned int);
-	static char *rep;
-	static char buffer[50];
-	char *ptr;
+	int bits = sizeof(number) * 8;
+	int foundSetBit = 0, i;
 
-	rep = "0123456789ABCDEF";
-	ptr = &buffer[49];
-	*ptr = '\0';
-	for (; number != 0; *--ptr = rep[number % 2])
-		number /= 2;
-	return (_puts(ptr));
+	for (i = bits - 1; i >= 0; i--)
+	{
+		if ((number >> i) & 1)
+		{
+			foundSetBit = 1;
+			putchar('1');
+		}
+		else if (foundSetBit)
+		{
+			putchar('0');
+		}
+	}
+	if (!foundSetBit)
+	{
+		putchar('0');
+	}
+	return (_putchar('\n'));
 }
 
 /**
@@ -109,7 +119,8 @@ int print_octal(va_list list)
 
 	int i = 0, len;
 
-	do {
+	do
+	{
 		str[i++] = (oct % 8) + '0';
 		oct /= 8;
 	} while (oct > 0);
