@@ -122,8 +122,7 @@ int print_octal(va_list list)
 
 	int i = 0, len;
 
-	do
-	{
+	do {
 		str[i++] = (oct % 8) + '0';
 		oct /= 8;
 	} while (oct > 0);
