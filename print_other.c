@@ -91,7 +91,7 @@ int print_binary(va_list list)
 	{
 		_putchar('0');
 	}
-	return (0);
+	return (1);
 }
 
 /**
