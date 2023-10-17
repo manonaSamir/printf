@@ -9,10 +9,10 @@
 int print_number(va_list list)
 {
 	int num = 0, count;
+
 	num = va_arg(list, int);
 
 	count = counter_number(num);
-
 	if (num <= 0)
 		count++;
 	loopNumber(num);
