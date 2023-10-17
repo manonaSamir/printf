@@ -8,8 +8,9 @@
 
 int print_number(va_list list)
 {
-	int num = va_arg(list, int);
-	int count = counter_number(num);
+	int num = 0, count;
+	num = va_arg(list, int);
+	count = counter_number(num);
 
 	if (num <= 0)
 		count++;
@@ -29,7 +30,8 @@ int print_un_number(va_list list)
 	char str[20], temp;
 	int i = 0, len;
 
-	do {
+	do
+	{
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);

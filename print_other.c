@@ -89,7 +89,7 @@ int print_binary(va_list list)
 	}
 	if (!foundSetBit)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 	return (_putchar('\n'));
 }
