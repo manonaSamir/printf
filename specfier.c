@@ -21,6 +21,8 @@ int (*print_specifier(char str))(va_list)
 		return (print_fnumber);
 	case 's':
 		return (print_string);
+	case 'S':
+		return (print_string);
 	case 'c':
 		return (print_character);
 	case 'x':
