@@ -6,20 +6,20 @@
  * main - Entry point
  *
  * Return: Always 0
- */int main(void) {
-    int len, len2;
+ */
+int main(void)
+{
 
-    len = _printf("%S", "\\x0A");
-    len2 = printf("\\x0A");
-    fflush(stdout);
-    if (len != len2) {
-        printf("Lengths differ.\n");
-        _printf("%s", "\\x0A");
-      printf("\\x0A");
-      printf("\n%d\n", len);
-      printf("%d", len2);
-        fflush(stdout);
-        return 1;
-    }
-    return 0;
+	int len, len2;
+
+	len = _printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
+	len2 = printf("Could you print some non-prntable characters?\nSure:\\x1F\\x7F\\x0A\nThanks!\n");
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	return (0);
 }

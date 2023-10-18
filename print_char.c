@@ -8,12 +8,20 @@
 
 int print_string(va_list list)
 {
+
 	char *string = va_arg(list, char *);
+	int i, count = 0;
+	char temp[5];
 
 	if (!string)
 		string = "(null)";
 
-	return (_puts(string));
+	for (i = 0; string[i] != '\0'; i++)
+	{
+		sprintf(temp, "\\x%02x", (unsigned char)string[i]);
+		count += _puts(temp);
+	}
+	return count;
 }
 
 /**
