@@ -102,3 +102,21 @@ int print_rot13(va_list list)
 	}
 	return (i);
 }
+
+
+
+/**
+ * print_literal - prints all character after //
+ * @str:  arguments from _printf
+ * Return: string of char printed
+ */
+
+int print_literal(const char *str)
+{
+	int i;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	return i;
+}

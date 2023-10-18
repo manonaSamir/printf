@@ -10,6 +10,7 @@
 
 int _putchar(char c);
 int _puts(char *str);
+int print_literal(const char *str);
 int _printf(const char *format, ...);
 int (*print_specifier(char s))(va_list);
 int print_percent(va_list list);

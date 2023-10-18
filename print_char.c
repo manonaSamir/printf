@@ -12,6 +12,7 @@ int print_string(va_list list)
 
 	if (!string)
 		string = "(null)";
+
 	return (_puts(string));
 }
 
