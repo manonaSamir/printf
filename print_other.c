@@ -12,6 +12,11 @@ int print_hex(va_list list)
 	int i = 0, len, remainder;
 	char hex_str[20], temp;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return 1;
+	}
 	for (; num > 0; num /= 16, i++)
 	{
 		remainder = num % 16;
@@ -44,6 +49,11 @@ int print_Big_hex(va_list list)
 	int i = 0, len, remainder;
 	char hex_str[20], temp;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return 1;
+	}
 	for (; num > 0; num /= 16, i++)
 	{
 		remainder = num % 16;
