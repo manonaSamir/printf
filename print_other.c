@@ -74,7 +74,11 @@ int print_binary(va_list list)
 {
 	int number = va_arg(list, int);
 	int bits = sizeof(number) * 8, foundSetBit = 0, i, count = 0;
-
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	for (i = bits - 1; i >= 0; i--)
 	{
 		if ((number >> i) & 1)
