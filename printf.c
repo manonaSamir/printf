@@ -37,21 +37,8 @@ int _printf(const char *format, ...)
 			if (pfunc)
 				i += pfunc(prints);
 			else
+			{
 				i += _printf("%%%c", *spec);
-		}
-		else if (*spec == '\\')
-		{
-			spec++;
-			if (*spec == 'x')
-			{
-				char literal[] = "\\x";
-				literal[2] = *++spec;
-				i += print_literal(literal);
-			}
-			else
-			{
-				i += print_literal("\\");
-				i += print_literal(spec);
 			}
 		}
 		else

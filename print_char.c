@@ -8,20 +8,56 @@
 
 int print_string(va_list list)
 {
-
 	char *string = va_arg(list, char *);
-	int i, count = 0;
-	char temp[5];
 
 	if (!string)
 		string = "(null)";
+	return (_puts(string));
+}
 
-	for (i = 0; string[i] != '\0'; i++)
+/**
+ * print_ascii - Non printable characters
+ * @list: va_list arguments from _printf
+ * Return: number of char printed
+ */
+int print_ascii(va_list list)
+{
+	int i, count = 0, temp;
+	static char buffer[50], *rep;
+	char *ptr;
+	char *s = va_arg(list, char *);
+
+	if (!s)
+		return (_puts("(null)"));
+
+	for (i = 0; s[i]; i++)
 	{
-		sprintf(temp, "\\x%02x", (unsigned char)string[i]);
-		count += _puts(temp);
+		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
+		{
+			temp = s[i];
+			_puts("\\x");
+			count += 2;
+			rep = "0123456789ABCDEF";
+			ptr = &buffer[49];
+			*ptr = '\0';
+			do
+			{
+				*--ptr = rep[temp % 16];
+				temp /= 16;
+			} while (temp != 0);
+
+			if (!ptr)
+				count += _putchar('0');
+			else
+			{
+				count += _putchar('0');
+				count += _puts(ptr);
+			}
+		}
+		else
+			count += _putchar(s[i]);
 	}
-	return count;
+	return (count);
 }
 
 /**

@@ -15,7 +15,7 @@ int print_hex(va_list list)
 	if (num == 0)
 	{
 		_putchar('0');
-		return 1;
+		return (1);
 	}
 	for (; num > 0; num /= 16, i++)
 	{
@@ -52,7 +52,7 @@ int print_Big_hex(va_list list)
 	if (num == 0)
 	{
 		_putchar('0');
-		return 1;
+		return (1);
 	}
 	for (; num > 0; num /= 16, i++)
 	{
@@ -84,6 +84,7 @@ int print_binary(va_list list)
 {
 	int number = va_arg(list, int);
 	int bits = sizeof(number) * 8, foundSetBit = 0, i, count = 0;
+
 	if (number == 0)
 	{
 		_putchar('0');
@@ -130,8 +131,7 @@ int print_octal(va_list list)
 
 	int i = 0, len;
 
-	do
-	{
+	do {
 		str[i++] = (oct % 8) + '0';
 		oct /= 8;
 	} while (oct > 0);
