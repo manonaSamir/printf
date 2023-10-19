@@ -26,7 +26,7 @@ int print_ascii(va_list list)
 	char *s = va_arg(list, char *);
 
 	if (!s)
-		return _puts("(null)");
+		return (_puts("(null)"));
 
 	for (int i = 0; s[i]; i++)
 	{
