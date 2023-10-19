@@ -46,16 +46,14 @@ int print_ascii(va_list list)
 				temp /= 16;
 			} while (temp != 0);
 
-			if (!ptr)
+			if (!ptr[1])
 				count += _putchar('0');
-			else
-			{
-				count += _putchar('0');
-				count += _puts(ptr);
-			}
+			count += _puts(ptr);
 		}
 		else
+		{
 			count += _putchar(s[i]);
+		}
 	}
 	return (count);
 }
