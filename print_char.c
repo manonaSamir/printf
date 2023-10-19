@@ -22,13 +22,13 @@ int print_string(va_list list)
  */
 int print_ascii(va_list list)
 {
-	int count = 0;
+	int count = 0, i;
 	char *s = va_arg(list, char *);
 
 	if (!s)
 		return (_puts("(null)"));
 
-	for (int i = 0; s[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
 		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
