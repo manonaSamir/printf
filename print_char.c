@@ -22,33 +22,19 @@ int print_string(va_list list)
  */
 int print_ascii(va_list list)
 {
-	int i, count = 0, temp;
-	static char buffer[50], *rep;
-	char *ptr;
+	int count = 0;
 	char *s = va_arg(list, char *);
 
 	if (!s)
-		return (_puts("(null)"));
+		return _puts("(null)");
 
-	for (i = 0; s[i]; i++)
+	for (int i = 0; s[i]; i++)
 	{
 		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
-			temp = s[i];
-			_puts("\\x");
-			count += 2;
-			rep = "0123456789ABCDEF";
-			ptr = &buffer[49];
-			*ptr = '\0';
-			do
-			{
-				*--ptr = rep[temp % 16];
-				temp /= 16;
-			} while (temp != 0);
-
-			if (!ptr[1])
-				count += _putchar('0');
-			count += _puts(ptr);
+			count += _puts("\\x");
+			count += _putchar("0123456789ABCDEF"[s[i] / 16]);
+			count += _putchar("0123456789ABCDEF"[s[i] % 16]);
 		}
 		else
 		{
