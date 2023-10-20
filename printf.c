@@ -11,14 +11,11 @@
 int _printf(const char *format, ...)
 {
 	register int i = 0;
-	int plus_flag = 0;
-	int space_flag = 0;
-	int hash_flag = 0;
 
 	const char *spec;
-	int (*pfunc)(va_list);
+	int (*pfunc)(va_list, char);
 	va_list prints;
-
+	char flag = '\0';
 	va_start(prints, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
@@ -39,33 +36,18 @@ int _printf(const char *format, ...)
 			while (*spec == '+' || *spec == ' ' || *spec == '#')
 			{
 				if (*spec == '+')
-					plus_flag = 1;
+					flag = '+';
 				else if (*spec == ' ')
-					space_flag = 1;
+					flag = ' ';
 				else if (*spec == '#')
-					hash_flag = 1;
+					flag = '#';
 				spec++;
 			}
+
 			pfunc = print_specifier(*spec);
 			if (pfunc)
 			{
-				if (plus_flag)
-					i += _putchar('+');
-				if (space_flag && !plus_flag)
-					i += _putchar(' ');
-				if (hash_flag)
-				{
-					if (*spec == 'o')
-					{
-						i += _putchar('0');
-					}
-					else if (*spec == 'x')
-					{
-						i += _putchar('0');
-						i += _putchar(*spec);
-					}
-				}
-				i += pfunc(prints);
+				i += pfunc(prints, flag);
 			}
 			else
 			{

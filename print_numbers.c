@@ -6,7 +6,7 @@
  * Return: number of char printed
  */
 
-int print_number(va_list list)
+int print_number(va_list list, char f)
 {
 	int num = 0, count;
 
@@ -15,6 +15,14 @@ int print_number(va_list list)
 	count = counter_number(num);
 	if (num <= 0)
 		count++;
+	else
+	{
+		if (f == '+')
+			_putchar('+');
+		if (f == ' ' && f != '+')
+			_putchar(' ');
+		count++;
+	}
 	loopNumber(num);
 	return (count);
 }
@@ -31,7 +39,8 @@ int print_un_number(va_list list)
 	char str[20], temp;
 	int i = 0, len;
 
-	do {
+	do
+	{
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);

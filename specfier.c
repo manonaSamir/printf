@@ -7,7 +7,7 @@
  * Return: 1.
  */
 
-int (*print_specifier(char str))(va_list)
+int (*print_specifier(char str))(va_list, char flag)
 {
 	switch (str)
 	{
@@ -15,7 +15,7 @@ int (*print_specifier(char str))(va_list)
 		return (print_number);
 	case 'd':
 		return (print_number);
-	case 'u':
+	/*case 'u':
 		return (print_un_number);
 	case 'f':
 		return (print_fnumber);
@@ -38,7 +38,7 @@ int (*print_specifier(char str))(va_list)
 	case 'p':
 		return (print_address);
 	case '%':
-		return (print_percent);
+		return (print_percent);*/
 	default:
 		return (0);
 	}

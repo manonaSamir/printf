@@ -11,7 +11,8 @@
 int _putchar(char c);
 int _puts(char *str);
 int _printf(const char *format, ...);
-int (*print_specifier(char s))(va_list);
+char get_flag(char str);
+int (*print_specifier(char s))(va_list, char flag);
 int print_percent(va_list list);
 int print_address(va_list list);
 int print_ascii(va_list list);
@@ -24,7 +25,7 @@ int print_character(va_list list);
 int print_string(va_list list);
 int print_fnumber(va_list list);
 int print_un_number(va_list list);
-int print_number(va_list list);
+int print_number(va_list list, char flag);
 int counter_number(int num);
 void loopNumber(int num);
 
