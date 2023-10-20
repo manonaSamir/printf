@@ -37,7 +37,6 @@ int print_address(va_list list, char f)
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
- * @f: flag
  * Return: On success 1.
  * as little as possible
  */
@@ -63,7 +62,6 @@ int _putchar(char c)
 /**
  * _puts - writes the character
  * @str: The character to print
- * @f: flag
  * Return: On success 1.
  * as little as possible
  */
