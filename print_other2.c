@@ -135,7 +135,8 @@ int print_rot13(va_list list, char f)
 					_putchar(sep[1][j]);
 			}
 		}
-		_putchar(str[i]);
+		else
+			_putchar(str[i]);
 	}
 	return (i);
 }
