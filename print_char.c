@@ -11,6 +11,10 @@ int print_string(va_list list, char f)
 {
 	char *string = va_arg(list, char *);
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	if (!string)
 		string = "(null)";
 	return (_puts(string));
@@ -27,6 +31,11 @@ int print_ascii(va_list list, char f)
 	int count = 0, i;
 	char *s = va_arg(list, char *);
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+	count++;
 	if (!s)
 		return (_puts("(null)"));
 
@@ -54,10 +63,10 @@ int print_ascii(va_list list, char f)
  */
 int print_character(va_list list, char f)
 {
-		if (f == '+')
-			_putchar('+');
-		if (f == ' ' && f != '+')
-			_putchar(' ');
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	_putchar(va_arg(list, int));
 	return (1);
 }

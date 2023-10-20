@@ -14,6 +14,11 @@ int print_address(va_list list, char f)
 	int digits = 0;
 	unsigned long int temp = addr;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+	count++;
 	if (!pointer)
 		return (_puts("(nil)"));
 	count += _putchar('0');
@@ -92,6 +97,10 @@ int print_rot13(va_list list, char f)
 	char *str = va_arg(list, char *);
 	int i, sepLen = strlen(str), j;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	for (i = 0; i < sepLen && str[i] != '\0'; i++)
 	{
 		if ((str[i] > 'a' || str[i] < 'z') && (str[i] > 'A' || str[i] < 'Z'))

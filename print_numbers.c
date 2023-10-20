@@ -40,7 +40,13 @@ int print_un_number(va_list list, char f)
 	char str[20], temp;
 	int i = 0, len;
 
-	do {
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+
+	do
+	{
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);
@@ -70,6 +76,10 @@ int print_fnumber(va_list list, char f)
 	static char buffer[50];
 	char *ptr;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	rep = "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';

@@ -25,7 +25,6 @@ int (*print_specifier(char str))(va_list, char flag)
 		return (print_string);
 	case 'S':
 		return (print_ascii);
-
 	case 'x':
 		return (print_hex);
 	case 'X':

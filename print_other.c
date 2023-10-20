@@ -13,6 +13,10 @@ int print_hex(va_list list, char f)
 	int i = 0, len, remainder;
 	char hex_str[20], temp;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	if (num == 0)
 	{
 		_putchar('0');
@@ -51,6 +55,10 @@ int print_Big_hex(va_list list, char f)
 	int i = 0, len, remainder;
 	char hex_str[20], temp;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
 	if (num == 0)
 	{
 		_putchar('0');
@@ -88,6 +96,11 @@ int print_binary(va_list list, char f)
 	int number = va_arg(list, int);
 	int bits = sizeof(number) * 8, foundSetBit = 0, i, count = 0;
 
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+	count++;
 	if (number == 0)
 	{
 		_putchar('0');
@@ -118,6 +131,7 @@ int print_binary(va_list list, char f)
  */
 int print_percent(va_list list, char f)
 {
+	(void)f;
 	(void)list;
 	return (_putchar('%'));
 }
@@ -136,7 +150,12 @@ int print_octal(va_list list, char f)
 
 	int i = 0, len;
 
-	do {
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+	do
+	{
 		str[i++] = (oct % 8) + '0';
 		oct /= 8;
 	} while (oct > 0);

@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			for (; *spec == '+' || *spec == ' ' || *spec == '#'; spec++)
-				*spec = flag;
+				flag = *spec;
 			pfunc = print_specifier(*spec);
 			if (pfunc)
 			{
