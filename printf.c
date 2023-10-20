@@ -33,12 +33,7 @@ int _printf(const char *format, ...)
 				i += _putchar('%');
 				continue;
 			}
-			if (*spec == ' ')
-			{
-				i += _putchar('%');
-				spec++;
-				continue;
-			}
+
 			pfunc = print_specifier(*spec);
 			while (*spec == '+' || *spec == ' ' || *spec == '#')
 			{
