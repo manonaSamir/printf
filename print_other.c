@@ -6,7 +6,7 @@
  * Return: number of char printed
  */
 
-int print_hex(va_list list)
+int print_hex(va_list list, char f)
 {
 	unsigned int num = va_arg(list, unsigned int);
 	int i = 0, len, remainder;
@@ -43,7 +43,7 @@ int print_hex(va_list list)
  * Return: number of char printed
  */
 
-int print_Big_hex(va_list list)
+int print_Big_hex(va_list list, char f)
 {
 	unsigned int num = va_arg(list, unsigned int);
 	int i = 0, len, remainder;
@@ -80,7 +80,7 @@ int print_Big_hex(va_list list)
  * Return: number of char printed
  */
 
-int print_binary(va_list list)
+int print_binary(va_list list, char f)
 {
 	int number = va_arg(list, int);
 	int bits = sizeof(number) * 8, foundSetBit = 0, i, count = 0;
@@ -112,7 +112,7 @@ int print_binary(va_list list)
  * @list: va_list arguments from _printf
  * Return: number of char printed
  */
-int print_percent(va_list list)
+int print_percent(va_list list, char f)
 {
 	(void)list;
 	return (_putchar('%'));
@@ -124,7 +124,7 @@ int print_percent(va_list list)
  * Return: number of char printed
  */
 
-int print_octal(va_list list)
+int print_octal(va_list list, char f)
 {
 	unsigned int oct = va_arg(list, unsigned int);
 	char str[20], temp;

@@ -33,7 +33,7 @@ int print_number(va_list list, char f)
  * Return: number of char printed
  */
 
-int print_un_number(va_list list)
+int print_un_number(va_list list, char f)
 {
 	unsigned int num = va_arg(list, unsigned int);
 	char str[20], temp;
@@ -62,7 +62,7 @@ int print_un_number(va_list list)
  * Return: number of char printed
  */
 
-int print_fnumber(va_list list)
+int print_fnumber(va_list list, char f)
 {
 	unsigned int num = va_arg(list, double);
 	static char *rep;

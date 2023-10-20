@@ -17,7 +17,7 @@ int (*print_specifier(char str))(va_list, char flag)
 		return (print_number);
 	case 'c':
 		return (print_character);
-	/*case 'u':
+	case 'u':
 		return (print_un_number);
 	case 'f':
 		return (print_fnumber);
@@ -39,7 +39,7 @@ int (*print_specifier(char str))(va_list, char flag)
 	case 'p':
 		return (print_address);
 	case '%':
-		return (print_percent);*/
+		return (print_percent);
 	default:
 		return (0);
 	}

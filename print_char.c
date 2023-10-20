@@ -6,7 +6,7 @@
  * Return: number of char printed
  */
 
-int print_string(va_list list)
+int print_string(va_list list, char f)
 {
 	char *string = va_arg(list, char *);
 
@@ -20,7 +20,7 @@ int print_string(va_list list)
  * @list: va_list arguments from _printf
  * Return: number of char printed
  */
-int print_ascii(va_list list)
+int print_ascii(va_list list, char f)
 {
 	int count = 0, i;
 	char *s = va_arg(list, char *);

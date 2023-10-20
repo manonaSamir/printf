@@ -5,7 +5,7 @@
  * @list: va_list arguments from _printf
  * Return: number of char printed
  */
-int print_address(va_list list)
+int print_address(va_list list, char f)
 {
 	void *pointer = va_arg(list, void *);
 	int count = 0, i, hexDigit, shift;
@@ -74,7 +74,7 @@ int _puts(char *str)
  * Return: number of char printed
  */
 
-int print_rot13(va_list list)
+int print_rot13(va_list list, char f)
 {
 	char sep[2][52] = {
 		{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
