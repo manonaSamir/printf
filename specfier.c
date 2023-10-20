@@ -37,6 +37,8 @@ int (*print_specifier(char str))(va_list, char flag)
 		return (print_rot13);
 	case 'p':
 		return (print_address);
+	case 'r':
+		return (print_reversed);
 	case '%':
 		return (print_percent);
 	default:

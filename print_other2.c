@@ -34,6 +34,33 @@ int print_address(va_list list, char f)
 }
 
 /**
+ * print_reversed - prints the reversed string
+ * @list: va_list arguments from _printf
+ * @f: flag
+ * Return: reversed string
+ */
+int print_reversed(va_list list, char f)
+{
+	int i = 0, x;
+	char *str = va_arg(list, char *);
+
+	if (f == '+')
+		_putchar('+');
+	if (f == ' ' && f != '+')
+		_putchar(' ');
+	if (!str)
+		str = "(null)";
+
+	while (str[i])
+		i++;
+
+	for (x = i - 1; x >= 0; x--)
+		_putchar(str[x]);
+
+	return (i);
+}
+
+/**
  * _putchar - writes the character c to stdout
  * @c: The character to print
  * Return: On success 1.

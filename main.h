@@ -25,6 +25,7 @@ int print_string(va_list list, char flag);
 int print_fnumber(va_list list, char flag);
 int print_un_number(va_list list, char flag);
 int print_number(va_list list, char flag);
+int print_reversed(va_list list, char f);
 int counter_number(int num);
 void loopNumber(int num);
 
