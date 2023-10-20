@@ -15,7 +15,7 @@ int print_number(va_list list, char f)
 	count = counter_number(num);
 	if (num <= 0)
 		count++;
-	else
+	if (num >= 0)
 	{
 		if (f == '+')
 			_putchar('+');
