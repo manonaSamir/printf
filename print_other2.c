@@ -18,7 +18,6 @@ int print_address(va_list list, char f)
 		_putchar('+');
 	if (f == ' ' && f != '+')
 		_putchar(' ');
-	count++;
 	if (!pointer)
 		return (_puts("(nil)"));
 	count += _putchar('0');
