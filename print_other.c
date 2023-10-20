@@ -3,6 +3,7 @@
 /**
  * print_hex - prints hexadecimal
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
@@ -40,6 +41,7 @@ int print_hex(va_list list, char f)
 /**
  * print_Big_hex - prints uppercase hexadecimal
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
@@ -77,6 +79,7 @@ int print_Big_hex(va_list list, char f)
 /**
  * print_binary - prints binary
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
@@ -110,6 +113,7 @@ int print_binary(va_list list, char f)
 /**
  * print_percent - prints a percent
  * @list: va_list arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 int print_percent(va_list list, char f)
@@ -121,6 +125,7 @@ int print_percent(va_list list, char f)
 /**
  * print_octal - prints octal
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 

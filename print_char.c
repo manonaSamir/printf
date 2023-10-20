@@ -3,6 +3,7 @@
 /**
  * print_string - prints string
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
@@ -18,6 +19,7 @@ int print_string(va_list list, char f)
 /**
  * print_ascii - Non printable characters
  * @list: va_list arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 int print_ascii(va_list list, char f)
@@ -47,6 +49,7 @@ int print_ascii(va_list list, char f)
 /**
  * print_character - prints string
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 int print_character(va_list list, char f)

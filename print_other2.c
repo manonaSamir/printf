@@ -3,6 +3,7 @@
 /**
  * print_address - prints address of input
  * @list: va_list arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 int print_address(va_list list, char f)
@@ -31,6 +32,7 @@ int print_address(va_list list, char f)
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
+ * @f: flag
  * Return: On success 1.
  * as little as possible
  */
@@ -56,6 +58,7 @@ int _putchar(char c)
 /**
  * _puts - writes the character
  * @str: The character to print
+ * @f: flag
  * Return: On success 1.
  * as little as possible
  */
@@ -71,6 +74,7 @@ int _puts(char *str)
 /**
  * print_rot13 - prints octal
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 

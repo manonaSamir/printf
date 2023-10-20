@@ -30,6 +30,7 @@ int print_number(va_list list, char f)
 /**
  * print_un_number - prints positive numbers
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
@@ -39,8 +40,7 @@ int print_un_number(va_list list, char f)
 	char str[20], temp;
 	int i = 0, len;
 
-	do
-	{
+	do {
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);
@@ -59,6 +59,7 @@ int print_un_number(va_list list, char f)
 /**
  * print_fnumber - prints positive numbers
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 

@@ -23,22 +23,3 @@ char get_flag(char str)
 		return '\0';
 	}
 }
-
-/*
-if (flag[0])
-	i += _putchar('+');
-if (flag[1] && !flag[0])
-	i += _putchar(' ');
-if (flag[2])
-{
-	if (*spec == 'o')
-	{
-		i += _putchar('0');
-	}
-	else if (*spec == 'x')
-	{
-		i += _putchar('0');
-		i += _putchar(*spec);
-	}
-}
-*/
