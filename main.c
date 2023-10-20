@@ -9,7 +9,16 @@
  */
 int main(void)
 {
+	int len, len2;
 
-	_printf("%S\n", "Best\nSchool");
+	len = _printf("%+d", 1024);
+	len2 = printf("%+d", 1024);
+	fflush(stdout);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
 	return (0);
 }
