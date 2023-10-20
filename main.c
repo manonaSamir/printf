@@ -11,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
-	len2 = printf("Complete the sentence: You know nothing, Jon Snow.\n");
+	len = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	len2 = printf("This sentence is retrieved from va_args!\n");
 	fflush(stdout);
 	if (len != len2)
 	{

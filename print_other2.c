@@ -127,7 +127,11 @@ int print_rot13(va_list list, char f)
 		_putchar(' ');
 	for (i = 0; i < sepLen && str[i] != '\0'; i++)
 	{
-		if ((str[i] > 'a' || str[i] < 'z') && (str[i] > 'A' || str[i] < 'Z'))
+		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
+		{
+			_putchar(str[i]);
+		}
+		else
 		{
 			for (j = 0; j <= 52; j++)
 			{
@@ -135,8 +139,6 @@ int print_rot13(va_list list, char f)
 					_putchar(sep[1][j]);
 			}
 		}
-		else
-			_putchar(str[i]);
 	}
 	return (i);
 }
