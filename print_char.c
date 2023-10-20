@@ -49,8 +49,12 @@ int print_ascii(va_list list)
  * @list: va_list of arguments from _printf
  * Return: number of char printed
  */
-int print_character(va_list list)
+int print_character(va_list list, char f)
 {
+		if (f == '+')
+			_putchar('+');
+		if (f == ' ' && f != '+')
+			_putchar(' ');
 	_putchar(va_arg(list, int));
 	return (1);
 }

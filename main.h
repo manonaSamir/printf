@@ -21,7 +21,7 @@ int print_binary(va_list list);
 int print_octal(va_list list);
 int print_hex(va_list list);
 int print_Big_hex(va_list list);
-int print_character(va_list list);
+int print_character(va_list list, char flag);
 int print_string(va_list list);
 int print_fnumber(va_list list);
 int print_un_number(va_list list);

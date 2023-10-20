@@ -33,6 +33,13 @@ int _printf(const char *format, ...)
 				i += _putchar('%');
 				continue;
 			}
+			if (*spec == ' ')
+			{
+				i += _putchar('%');
+				spec++;
+				continue;
+			}
+			pfunc = print_specifier(*spec);
 			while (*spec == '+' || *spec == ' ' || *spec == '#')
 			{
 				if (*spec == '+')
@@ -43,16 +50,13 @@ int _printf(const char *format, ...)
 					flag = '#';
 				spec++;
 			}
-
-			pfunc = print_specifier(*spec);
 			if (pfunc)
 			{
 				i += pfunc(prints, flag);
 			}
 			else
-			{
+
 				i += _printf("%%%c", *spec);
-			}
 		}
 		else
 			i += _putchar(*spec);

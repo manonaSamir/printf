@@ -15,6 +15,8 @@ int (*print_specifier(char str))(va_list, char flag)
 		return (print_number);
 	case 'd':
 		return (print_number);
+	case 'c':
+		return (print_character);
 	/*case 'u':
 		return (print_un_number);
 	case 'f':
@@ -23,8 +25,7 @@ int (*print_specifier(char str))(va_list, char flag)
 		return (print_string);
 	case 'S':
 		return (print_ascii);
-	case 'c':
-		return (print_character);
+
 	case 'x':
 		return (print_hex);
 	case 'X':
