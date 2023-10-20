@@ -35,7 +35,6 @@ int print_ascii(va_list list, char f)
 		_putchar('+');
 	if (f == ' ' && f != '+')
 		_putchar(' ');
-	count++;
 	if (!s)
 		return (_puts("(null)"));
 
