@@ -22,7 +22,6 @@ int print_number(va_list list, char f)
 			_putchar('+');
 		if (f == ' ' && f != '+')
 			_putchar(' ');
-		count++;
 	}
 	loopNumber(num);
 	return (count);
