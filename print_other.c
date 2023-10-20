@@ -154,8 +154,7 @@ int print_octal(va_list list, char f)
 		_putchar('+');
 	if (f == ' ' && f != '+')
 		_putchar(' ');
-	do
-	{
+	do {
 		str[i++] = (oct % 8) + '0';
 		oct /= 8;
 	} while (oct > 0);

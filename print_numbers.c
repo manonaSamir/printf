@@ -45,8 +45,7 @@ int print_un_number(va_list list, char f)
 	if (f == ' ' && f != '+')
 		_putchar(' ');
 
-	do
-	{
+	do {
 		str[i++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);
