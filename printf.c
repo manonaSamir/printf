@@ -11,11 +11,11 @@
 int _printf(const char *format, ...)
 {
 	register int i = 0;
-
 	const char *spec;
 	int (*pfunc)(va_list, char);
 	va_list prints;
 	char flag = '\0';
+
 	va_start(prints, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
@@ -33,18 +33,8 @@ int _printf(const char *format, ...)
 				i += _putchar('%');
 				continue;
 			}
-
-
-			while (*spec == '+' || *spec == ' ' || *spec == '#')
-			{
-				if (*spec == '+')
-					flag = '+';
-				else if (*spec == ' ')
-					flag = ' ';
-				else if (*spec == '#')
-					flag = '#';
-				spec++;
-			}
+			for (; *spec == '+' || *spec == ' ' || *spec == '#'; spec++)
+				*spec = flag;
 			pfunc = print_specifier(*spec);
 			if (pfunc)
 			{
