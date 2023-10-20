@@ -100,7 +100,7 @@ int print_binary(va_list list, char f)
 		_putchar('+');
 	if (f == ' ' && f != '+')
 		_putchar(' ');
-	count++;
+
 	if (number == 0)
 	{
 		_putchar('0');
