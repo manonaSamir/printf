@@ -3,6 +3,7 @@
 /**
  * print_number - prints numbers
  * @list: va_list of arguments from _printf
+ * @f: flag
  * Return: number of char printed
  */
 
